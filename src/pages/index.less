@@ -1,7 +1,96 @@
+@primary: rgb(139, 204, 102);
+@radius: 4px;
+@gray: rgba(238, 238, 238, 0.4);
 
-.normal {
-}
+ul.list {
+  padding: 15px;
+  li {
+    position: relative;
+    overflow: hidden;
+    border-radius: @radius;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-color: #eee;
+    border-width: 1px;
+    border-style: solid;
 
-.title {
-  background: rgb(121, 242, 157);
+    &:hover {
+      background-color: @gray;
+      transition: all 600ms;
+      border-radius: @radius;
+      border-color: #eee;
+    }
+    > p.rule {
+      margin-top: 15px;
+      padding: 5px 15px;
+      background: #eee;
+      color: #000;
+      border-radius: @radius;
+      line-height: 2;
+      > .btnCopy {
+        border-radius: @radius;
+        margin-right: 15px;
+        padding: 5px;
+        background: @primary;
+        color: #fff;
+        font-size: 12px;
+        cursor: pointer;
+
+        &:active {
+          opacity: 0.6;
+          color: #444;
+        }
+
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+
+    > section.verification {
+      margin-top: 15px;
+      overflow: hidden;
+      > label {
+        display: block;
+        > input {
+          width: 40%;
+          padding: 5px 15px;
+          border-radius: @radius;
+          border: 1px solid #ddd;
+          font-size: 16px;
+          & + .btnClear {
+            padding: 5px;
+            color: #000;
+            display: inline-block;
+          }
+        }
+      }
+      > .tip {
+        height: 24px;
+        padding: 5px;
+        > p {
+          font-size: 14px;
+          &.success {
+            color: #4caf50;
+          }
+
+          &.error {
+            color: #ff5722;
+          }
+        }
+      }
+    }
+
+    > section.trigger {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      h3 {
+        font-size: 14px;
+      }
+      > label {
+        padding: 0 10px;
+      }
+    }
+  }
 }
